@@ -1,4 +1,4 @@
-import react from "react"
+import react from "react";
 import {
   View,
   Text,
@@ -6,50 +6,45 @@ import {
   StyleSheet,
   Image,
   StatusBar,
-  ScrollView,ImageBackground,TextInput
+  ScrollView,
+  ImageBackground,
+  TextInput,
 } from "react-native";
 
-import { Ionicons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons'; 
+import { Ionicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
-const ProductDetails=({navigation,route})=> {
-  const {item} = route.params
-  return(
-    <ImageBackground source={require("../assets/homePhoto.jpg") }style={{height:400}}>
-        <StatusBar
+const ProductDetails = ({ navigation, route }) => {
+  const { item } = route.params;
+  return (
+    <ImageBackground
+      source={require("../assets/homePhoto.jpg")}
+      style={{ height: 400 }}
+    >
+      <StatusBar
         animated={true}
-         backgroundColor='red'
-         barStyle="default"
-         showHideTransition="fade" hidden={false} />
+        backgroundColor="red"
+        barStyle="default"
+        showHideTransition="fade"
+        hidden={false}
+      />
+      <TouchableOpacity activeOpacity={0.8} style={styles.Back}>
+        <MaterialIcons name="arrow-back-ios" size={28} color="black" />
+      </TouchableOpacity>
+      <View style={styles.row}>
+        <TouchableOpacity activeOpacity={0.8} style={styles.heart}>
+          <Ionicons color={"black"} name={"heart-outline"} size={24} />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.8} style={styles.bag}>
+          <Feather name="shopping-bag" size={22} color="black" />
+        </TouchableOpacity>
+      </View>
+      {/* 
 
-         <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.Back}
-        >
-         <MaterialIcons name="arrow-back-ios" size={28} color="black" />
-          
-        </TouchableOpacity>
-    <View style={styles.row}>
-    <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.heart}
-        >
-          <Ionicons
-            color={"black"}
-            name={"heart-outline"}
-            size={24}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.bag}
-        >
-         <Feather name="shopping-bag" size={22} color="black" />
-        </TouchableOpacity>
-        
-    </View>
+         
+ 
      <View style={styles.container}> <View style={{marginTop:20}}>
       <View style= {styles.row}  >
       <Text style={styles.productName}{item.nameP}</Text>
@@ -215,77 +210,70 @@ fontSize:26,fontWeight:"bold" ,marginTop:12,color:"white",}}>Add to cart</Text>
     </View>
     
     </View>
-      
+       */}
     </ImageBackground>
-   
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  container :{
-    backgroundColor: 'white',
+  container: {
+    backgroundColor: "white",
 
     height: 600,
     marginTop: 300,
-  
+
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-
   },
- 
-  homeImg :{
+
+  homeImg: {
     width: "100%",
     height: 600,
-    borderTopRightRadius:3,
-    borderTopLeftRadius:3,
+    borderTopRightRadius: 3,
+    borderTopLeftRadius: 3,
     borderBottomRightRadius: 3,
     borderBottomLeftRadius: 3,
     alignSelf: "center",
- 
-    borderColor:'gray',
+
+    borderColor: "gray",
     elevation: 20,
     shadowColor: "gray",
-    marginTop:14
-    
+    marginTop: 14,
   },
-  productName:{
+  productName: {
     fontSize: 22,
 
-  marginTop: 2,
-  marginStart:20,
-  marginLeft:10,
-  fontWeight:'800'
+    marginTop: 2,
+    marginStart: 20,
+    marginLeft: 10,
+    fontWeight: "800",
   },
   price: {
     fontSize: 26,
     color: "white",
     marginTop: 6,
-    marginRight:7,
-    fontWeight:'bold'
-
-    
+    marginRight: 7,
+    fontWeight: "bold",
   },
   row: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-   
-  }, Rate: {
+  },
+  Rate: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop:1
-    
-   
+    marginTop: 1,
   },
   rowcolor: {
     flexDirection: "row",
     alignItems: "center",
-  
-    marginEnd: 20
+
+    marginEnd: 20,
   },
-  imgeView:{
+  imgeView: {
     height: 450,
-    width:350,
+    width: 350,
     backgroundColor: "white",
     justifyContent: "space-between",
     padding: 10,
@@ -293,28 +281,26 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 15,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    borderWidth:0.5,
-    borderColor:'gray',
+    borderWidth: 0.5,
+    borderColor: "gray",
     elevation: 20,
     shadowColor: "gray",
-    margin:20
-    
+    margin: 20,
   },
-  pricView:{
-    width:100,
-    height:50,
-    backgroundColor:'#F999B7',
+  pricView: {
+    width: 100,
+    height: 50,
+    backgroundColor: "#F999B7",
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     shadowColor: "gray",
-    marginEnd:15,
-    marginTop:1,
+    marginEnd: 15,
+    marginTop: 1,
     alignItems: "center",
-
   },
-  arrow:{
+  arrow: {
     position: "absolute",
     right: 0,
     top: 10,
@@ -325,36 +311,36 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
-    marginEnd:7
+    marginEnd: 7,
   },
-  coloum:{
-    flexDirection:"column" ,
+  coloum: {
+    flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    marginEnd:70,
-    marginTop:10
-   
+    marginEnd: 70,
+    marginTop: 10,
   },
-  Quantityrow:{
-      flexDirection: "row",
+  Quantityrow: {
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop:17
+    marginTop: 17,
   },
-  buyNow:{
-    width:300,
-    height:60,
-   
+  buyNow: {
+    width: 300,
+    height: 60,
+
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: "gray",
-   
-    marginTop:20,
+
+    marginTop: 20,
     alignSelf: "center",
-    backgroundColor:"#F2789F"
-  },heart: {
+    backgroundColor: "#F2789F",
+  },
+  heart: {
     position: "absolute",
     right: 0,
     top: 10,
@@ -365,21 +351,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
-    marginEnd:7
-  },Back:{
+    marginEnd: 7,
+  },
+  Back: {
     position: "absolute",
     right: 0,
     top: 10,
     width: 40,
     height: 40,
     zIndex: 10,
-  
+
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
-    marginEnd:340
+    marginEnd: 340,
   },
-  bag:{
+  bag: {
     position: "absolute",
     right: 0,
     top: 10,
@@ -390,9 +377,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
-    marginEnd:60 
+    marginEnd: 60,
   },
-  minus:{
+  minus: {
     position: "absolute",
     right: 0,
     top: 10,
@@ -403,8 +390,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
-   marginEnd:100
-  },plus:{
+    marginEnd: 100,
+  },
+  plus: {
     position: "absolute",
     right: 0,
     top: 10,
@@ -415,9 +403,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
-   marginEnd:20
-
-  }
-
-})
+    marginEnd: 20,
+  },
+});
 export default ProductDetails;
