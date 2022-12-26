@@ -7,132 +7,125 @@ import {
   Image,
   StatusBar,
   TextInput,
+  ScrollView,
 } from "react-native";
 
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.ViewPro}>
-        <TouchableOpacity activeOpacity={0.8} style={styles.Back}>
-          <MaterialIcons name="arrow-back-ios" size={28} color="white" />
-        </TouchableOpacity>
-        <View style={styles.coloum}>
-          <Image
-            style={styles.profileImg}
-            source={require("../assets/face.jpg")}
-          />
-          <Text
-            style={{
-              fontSize: 24,
-              fontWeight: "bold",
-              marginTop: 10,
-              color: "white",
-            }}
-          >
-            {" "}
-            Elaf helou
-          </Text>
-        </View>
-        <TextInput
-          style={{
-            height: 80,
-            fontSize: 20,
-            width: 350,
-            backgroundColor: "white",
-            alignSelf: "center",
-            borderColor: "gray",
-            color: "gray",
-            borderBottomWidth: 1,
-            padding: 10,
-            marginTop: 50,
-            shadowColor: "gray",
-          }}
-          placeholder="elafhelou"
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.coloum}>
+        <Image
+          style={styles.profileImg}
+          source={require("../assets/face.jpg")}
         />
-        <TextInput
+        <Text
           style={{
-            height: 80,
-            fontSize: 20,
-            width: 350,
-            backgroundColor: "white",
-            alignSelf: "center",
-            borderColor: "gray",
-            color: "gray",
-            borderBottomWidth: 1,
-            padding: 10,
-            marginTop: 50,
-            shadowColor: "gray",
+            fontSize: 24,
+            fontWeight: "bold",
+            marginTop: 10,
+            color: "white",
           }}
-          placeholder="+920598913115"
-        />
-        <TextInput
-          style={{
-            height: 80,
-            fontSize: 20,
-            width: 350,
-            backgroundColor: "white",
-            color: "gray",
-            alignSelf: "center",
-            borderColor: "gray",
-            borderBottomWidth: 1,
-            padding: 10,
-            marginTop: 50,
-            shadowColor: "gray",
-          }}
-          placeholder="elafjabr1@gmail.com"
-        />
-        <TextInput
-          style={{
-            height: 80,
-            fontSize: 20,
-            color: "gray",
-            width: 350,
-            backgroundColor: "white",
-            alignSelf: "center",
-            borderColor: "gray",
-            borderBottomWidth: 1,
-            padding: 10,
-            marginTop: 50,
-            shadowColor: "gray",
-          }}
-          placeholder="Palestine-Gaza"
-        />
-        <View style={styles.buyNow}>
-          <Text
-            style={{
-              alignSelf: "center",
-              fontSize: 26,
-              fontWeight: "bold",
-              marginTop: 12,
-              color: "white",
-            }}
-          >
-            {" "}
-            Save
-          </Text>
-        </View>
+        >
+          {" "}
+          Elaf helou
+        </Text>
       </View>
-    </View>
+      <TextInput
+        style={{
+          height: 80,
+          fontSize: 20,
+          width: 350,
+          backgroundColor: "white",
+          alignSelf: "center",
+          borderColor: "gray",
+          color: "gray",
+          borderBottomWidth: 1,
+          padding: 10,
+          marginTop: 50,
+          shadowColor: "gray",
+        }}
+        placeholder="elafhelou"
+      />
+      <TextInput
+        style={{
+          height: 80,
+          fontSize: 20,
+          width: 350,
+          backgroundColor: "white",
+          alignSelf: "center",
+          borderColor: "gray",
+          color: "gray",
+          borderBottomWidth: 1,
+          padding: 10,
+          marginTop: 50,
+          shadowColor: "gray",
+        }}
+        placeholder="+920598913115"
+      />
+      <TextInput
+        style={{
+          height: 80,
+          fontSize: 20,
+          width: 350,
+          backgroundColor: "white",
+          color: "gray",
+          alignSelf: "center",
+          borderColor: "gray",
+          borderBottomWidth: 1,
+          padding: 10,
+          marginTop: 50,
+          shadowColor: "gray",
+        }}
+        placeholder="elafjabr1@gmail.com"
+      />
+      <TextInput
+        style={{
+          height: 80,
+          fontSize: 20,
+          color: "gray",
+          width: 350,
+          backgroundColor: "white",
+          alignSelf: "center",
+          borderColor: "gray",
+          borderBottomWidth: 1,
+          padding: 10,
+          marginTop: 50,
+          shadowColor: "gray",
+        }}
+        placeholder="Palestine-Gaza"
+      />
+      <View style={styles.buyNow}>
+        <Text
+          style={{
+            alignSelf: "center",
+            fontSize: 26,
+            fontWeight: "bold",
+            marginTop: 12,
+            color: "white",
+          }}
+        >
+          {" "}
+          Save
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
   container: {
-    height: 800,
     backgroundColor: "white",
-  },
-  ViewPro: {
-    height: 270,
-    backgroundColor: "#F2789F",
-    borderBottomEndRadius: 35,
-    borderBottomStartRadius: 35,
   },
   coloum: {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: 70,
+    paddingVertical: 70,
+    height: 270,
+    backgroundColor: "#F2789F",
+    borderBottomEndRadius: 35,
+    borderBottomStartRadius: 35,
   },
   profileImg: {
     height: 130,

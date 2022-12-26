@@ -57,7 +57,10 @@ const BottomTabScreen = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <AppStack.Navigator screenOptions={{ headerShown: false }}>
+      <AppStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="BottomTabScreen"
+      >
         <AppStack.Screen name="Login" component={Login} />
         <AppStack.Screen name="Signup" component={Signup} />
         <AppStack.Screen name="BottomTabScreen" component={BottomTabScreen} />

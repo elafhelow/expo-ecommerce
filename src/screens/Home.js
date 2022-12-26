@@ -9,6 +9,7 @@ import {
   Image,
   FlatList,
   StatusBar,
+  ScrollView,
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -58,12 +59,6 @@ const Home = () => {
     },
   ];
 
-  /* const AllCategory =[
-    {images :require("../assets/foundationImag.jpg"), name : "Concelare", orders:"2000 order",price:"30$"},
-    {images :require("../assets/PaletteTopface.jpg"), name : "Lipstic", orders:"500 order", price:"40$"},
-    {images :require("../assets/macRoug.jpg"), name : "concealer", orders:"888 order", price:"340$"},
- 
-  ];*/
   const [categoriesProduct, setcategories] = useState([
     {
       name: "Foundation",
@@ -72,12 +67,12 @@ const Home = () => {
       images: require("../assets/foundationImag.jpg"),
       products: [
         {
-          nameP: "Mac Fouunfation",
+          name: "Mac Fouunfation",
           images: require("../assets/foundationImag.jpg"),
           price: "30$",
         },
         {
-          nameP: "TopFace Fondation",
+          name: "TopFace Fondation",
           images: require("../assets/foundationImag.jpg"),
           price: "30$",
         },
@@ -90,12 +85,12 @@ const Home = () => {
       images: require("../assets/macRoug.jpg"),
       products: [
         {
-          nameP: "Mac Lipstic",
+          name: "Mac Lipstic",
           images: require("../assets/macRoug.jpg"),
           price: "100$",
         },
         {
-          nameP: "Note Lipstic",
+          name: "Note Lipstic",
           images: require("../assets/macRoug.jpg"),
           price: "100$",
         },
@@ -108,12 +103,12 @@ const Home = () => {
       images: require("../assets/macRoug.jpg"),
       products: [
         {
-          nameP: "Mac Lipstic",
+          name: "Mac Lipstic",
           images: require("../assets/PaletteTopface.jpg"),
           price: "100$",
         },
         {
-          nameP: "Note Lipstic",
+          name: "Note Lipstic",
           images: require("../assets/PaletteTopface.jpg"),
           price: "100$",
         },
@@ -122,7 +117,7 @@ const Home = () => {
   ]);
 
   return (
-    <View style={styles.cantainer}>
+    <ScrollView style={styles.cantainer}>
       <StatusBar
         animated={true}
         backgroundColor="red"
@@ -194,14 +189,13 @@ const Home = () => {
           <MaterialIcons name="arrow-forward-ios" size={24} color="black" />
         </TouchableOpacity>
       </View>
-
       <FlatList
         data={categoriesProduct}
-        numColumns="2"
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item, index) => index}
+        horizontal
         renderItem={({ item }) => <CategoryCom item={item} />}
       />
-    </View>
+    </ScrollView>
   );
 };
 

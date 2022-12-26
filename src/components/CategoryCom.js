@@ -8,15 +8,15 @@ const CategoryCom = (props) => {
   const { item } = props;
   const navigation = useNavigation();
   const onClick = () => {
-    navigation.navigate("AllProduct", {
+    navigation.navigate("ALlProduct", {
       cat_name: item.name,
       products: item.products,
     });
   };
 
   return (
-    <View style={styles.cont} onPress={onClick}>
-      {/* <View>
+    <TouchableOpacity style={styles.cont} onPress={onClick}>
+      <View>
         <Image style={styles.img} source={item.images} />
       </View>
 
@@ -32,10 +32,69 @@ const CategoryCom = (props) => {
       </View>
       <TouchableOpacity activeOpacity={0.8} style={styles.heart}>
         <Ionicons color={"black"} name={"heart-outline"} size={20} />
-      </TouchableOpacity> */}
-    </View>
+      </TouchableOpacity>
+    </TouchableOpacity>
   );
 };
 export default CategoryCom;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  cont: {
+    marginTop: 20,
+    width: 170,
+    marginStart: 20,
+  },
+  img: {
+    width: "100%",
+    height: 170,
+    shadowColor: "gray",
+    borderWidth: 0,
+    borderColor: "gray",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+  },
+  box: {
+    height: 85,
+    backgroundColor: "white",
+    justifyContent: "space-between",
+    padding: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    borderWidth: 0,
+    borderColor: "gray",
+    elevation: 20,
+    shadowColor: "gray",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  size: {
+    color: "grey",
+    fontSize: 18,
+  },
+  price: {
+    fontSize: 18,
+    color: "#F999B7",
+  },
+  heart: {
+    position: "absolute",
+    right: 0,
+    top: 10,
+    width: 30,
+    height: 30,
+    zIndex: 10,
+    backgroundColor: "#FBD5E1",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    marginEnd: 7,
+  },
+});
